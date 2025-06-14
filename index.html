@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="TEXGen: a Generative Diffusion Model for Mesh Textures">
+        content="SeqTex: Generate Mesh Textures in Video Sequence">
   <meta name="keywords" content="3D generation, textures, diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TEXGen</title>
+  <title>SeqTex</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -57,9 +57,23 @@
         gap: 15px; /* 控制视频间距 */
     }
     .video-wrapper .item {
-        flex: 0 0 calc(20% - 15px); /* 每个视频占一行的 20%，扣除间距 */
+        flex: 0 0 calc(25% - 15px); /* 每个视频占一行的 20%，扣除间距 */
     }
     .video-wrapper video {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-wrapper2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* 控制视频间距 */
+    }
+    .video-wrapper2 .item {
+        flex: 0 0 calc(50% - 15px); /* 每个视频占一行的 20%，扣除间距 */
+    }
+    .video-wrapper2 video {
         width: 100%;
         height: auto;
     }
@@ -69,6 +83,11 @@
     .affiliation-block {
         color:rgb(0,0,0);
         font-size: 20px;
+        font-family: 'Noto Sans', sans-serif;
+    }
+    .contribution {
+        color:rgb(64, 64, 64);
+        font-size: 16px;
         font-family: 'Noto Sans', sans-serif;
     }
   </style>
@@ -90,23 +109,17 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">TEXGen: a Generative Diffusion Model for Mesh Textures</h1>
+                    <h1 class="title is-1 publication-title">SeqTex: Generate Mesh Textures in Video Sequence</h1>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
-                            <a href="https://scholar.google.com/citations?user=JX8kSoEAAAAJ&hl=zh-CN" target="_Blank">Xin Yu</a><sup class="affiliation">1</sup>,</span>
+                            <a href="https://yuanze.me" target="_Blank">Ze Yuan</a><sup class="affiliation">1*</sup>,</span>
                         <span class="author-block">
-                            <a href="https://yuanze.me" target="_Blank">Ze Yuan</a><sup class="affiliation">3</sup>,</span>
+                            <a href="https://scholar.google.com/citations?user=JX8kSoEAAAAJ&hl=zh-CN" target="_Blank">Xin Yu</a><sup class="affiliation">1*†</sup>,</span>
+                        <span class="author-block">
+                            <a href="https://sunyangtian.github.io/" target="_Blank">Yangtian Sun</a><sup class="affiliation">1</sup>,
+                        </span>
                         <span class="author-block">
                             <a href="https://scholar.google.com/citations?user=b7ZJV9oAAAAJ&hl=en" target="_Blank">Yuan-Chen Guo</a><sup class="affiliation">2</sup>,
-                        </span>
-                        <span class="author-block">
-                            <a href="https://scholar.google.com/citations?user=sjFapgUAAAAJ&hl=zh-CN" target="_Blank">Ying-Tian Liu</a><sup class="affiliation">4</sup>,
-                        </span>
-                        <span class="author-block">
-                            <a href="https://sites.google.com/view/jianhuiliu/home" target="_Blank">JianHui Liu</a><sup class="affiliation">1</sup>,
-                        </span>
-                        <span class="author-block">
-                            Yangguang Li<sup class="affiliation">2</sup>,
                         </span>
                         <span class="author-block">
                             <a href="https://yanpei.me" target="_Blank">Yan-Pei Cao</a><sup class="affiliation">2</sup>,
@@ -120,45 +133,47 @@
                     </div>
 
                     <div class="is-size-5 publication-authors">
-                        <span class="affiliation-block"><sup>1</sup>The University of Hong Kong,</span>
-                        <span class="affiliation-block"><sup>2</sup>VAST,</span>
-                        <span class="affiliation-block"><sup>3</sup>Beihang University,</span>
-                        <span class="affiliation-block"><sup>4</sup>Tsinghua University</span>
+                        <span class="affiliation-block"><sup>1</sup>HKU,</span>
+                        <span class="affiliation-block"><sup>2</sup>VAST</span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="contribution"><sup>*</sup>Equal contribution,</span>
+                        <span class="contribution"><sup>†</sup>Project lead</span>
                     </div>
 
                     <div class="is-size-5 conference">
-                        <span class="author-block">SIGGRAPH Asia 2024 (Journal Track)</span>
+                        <span class="author-block">arXiv</span>
                     </div>
 
                     <div class="column has-text-centered">
                         <div class="publication-links">
                             <!-- PDF Link. -->
                             <span class="link-block">
-                                <a href="./paper/TEXGen.pdf"
+                                <a href="./paper/SeqTex.pdf"
                                     class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fas fa-file-pdf"></i>
                                     </span>
-                                    <span>Paper</span>
+                                    <span>Coming Soon</span>
                                 </a>
                             </span>
                             <span class="link-block">
-                                <!-- TODO: -->
-                                <a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2411.14740">
+                                <a class="external-link button is-normal is-rounded is-dark" href="https://placeholder.com/">
                                     <span class="icon">
                                         <i class="ai ai-arxiv"></i>
                                     </span>
-                                    <span>arXiv</span>
+                                    <span>Coming Soon</span>
                                 </a>
                             </span>
 
                             <!-- Github Link. -->
                             <span class="link-block">
-                                <a href="https://github.com/CVMI-Lab/TEXGen" class="external-link button is-normal is-rounded is-dark">
+                                <a href="https://placeholder.com/" class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fab fa-github"></i>
                                     </span>
-                                    <span>Code</span>
+                                    <span>Coming Soon</span>
                                 </a>
                             </span>
                             <!-- Dataset Link. -->
@@ -174,7 +189,7 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <img src="./figs/teaser.jpg">
+            <img src="./assets/figs/teaser.png" alt="SeqTex teaser image" width="100%">
             <!-- <h2 class=" subtitle has-text-centered" style="padding-top: 10px">
                 A gallery of generated results by our Point-UV Diffusion. Our method is capable of processing meshes of any genus, generating diversified, geometry-compatible, and high-fidelity textures. 
             </h2> -->
@@ -190,16 +205,10 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        While high-quality texture maps are essential for realistic 3D asset rendering, few studies have explored learning 
-                        directly in the texture space, especially on large-scale datasets. In this work, we depart from the conventional 
-                        approach of relying on pre-trained 2D diffusion models for testtime optimization of 3D textures. 
-                        Instead, we focus on the fundamental problem of learning in the UV texture space itself. For the first time, 
-                        we train a large diffusion model capable of directly generating high-resolution texture maps in a feed-forward manner. 
-                        To facilitate efficient learning in high-resolution UV spaces, we propose a scalable network architecture that 
-                        interleaves convolutions on UV maps with attention layers on point clouds. Leveraging this architectural design, 
-                        we train a 700 million parameter diffusion model that can generate UV texture maps guided by text prompts and 
-                        single-view images. Once trained, our model naturally supports various extended applications, including text-guided 
-                        texture inpainting, sparse-view texture completion, and text-driven texture synthesis. 
+                        Training native 3D texture generative models remains a fundamental yet challenging problem, largely due to the limited availability of large-scale, high-quality 3D texture datasets. This scarcity hinders generalization to real-world scenarios. To address this, most existing methods finetune foundation image generative models to exploit their learned visual priors. However, these approaches typically generate only multi-view images and rely on post-processing to produce UV texture maps—an essential representation in modern graphics pipelines. Such two-stage pipelines often suffer from error accumulation and spatial inconsistencies across the 3D surface.  
+                        In this paper, we introduce <b>SeqTex</b>, a novel end-to-end framework that leverages the visual knowledge encoded in pretrained video diffusion models to directly generate complete UV texture maps. Unlike previous methods that model the distribution of UV textures in isolation, <b>SeqTex</b> reformulates the task as a sequence generation problem, enabling the model to learn the joint distribution of multi-view renderings and UV textures. This design effectively transfers the consistent image-space priors from video diffusion models into the UV domain.
+                        To further enhance performance, we propose several architectural innovations: a decoupled multi-view and UV branch design, geometry-informed attention to guide cross-domain feature alignment, and adaptive token resolution to preserve fine texture details while maintaining computational efficiency. Together, these components allow <b>SeqTex</b> to fully utilize pretrained video priors and synthesize high-fidelity UV texture maps without the need for post-processing.
+                        Extensive experiments show that SeqTex achieves state-of-the-art performance on both image-conditioned and text-conditioned 3D texture generation tasks, with superior 3D consistency, texture-geometry alignment, and real-world generalization.
                     </p>
                     
                 </div>
@@ -209,7 +218,8 @@
 </section>
 
 
-<section class="hero video-section">
+<!-- TODO -->
+<!-- <section class="hero video-section">
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="title is-4">Fast Forward</h2>
@@ -218,87 +228,77 @@
             </video>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="hero video-section">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <h2 class="title is-4">Details</h2>
+            <h2 class="title is-4">Text-Condition Generation Result Details</h2>
             <div class="video-wrapper">
                 <!-- 视频列表 -->
                 <div class="item">
-                    <video poster="" id="4" autoplay controls muted loop playsinline>
-                        <source src="./videos/4.mp4" type="video/mp4">
+                    <video poster="" id="4ccebf9f5036420f8b1f67779da45ae1_0_32" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/4ccebf9f5036420f8b1f67779da45ae1_0_32.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="7" autoplay controls muted loop playsinline>
-                        <source src="./videos/7.mp4" type="video/mp4">
+                    <video poster="" id="5a6e457d83fa4392a07e0755e2f8d278_0_30" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/5a6e457d83fa4392a07e0755e2f8d278_0_30.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="6" autoplay controls muted loop playsinline>
-                        <source src="./videos/6.mp4" type="video/mp4">
+                    <video poster="" id="5f3dfd44c6cd4bef8acca92791efa006_0_244" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/5f3dfd44c6cd4bef8acca92791efa006_0_244.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="2" autoplay controls muted loop playsinline>
-                        <source src="./videos/2.mp4" type="video/mp4">
+                    <video poster="" id="06b1b263b67c463d9a2e42add4516ebb_0_97" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/06b1b263b67c463d9a2e42add4516ebb_0_97.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="13" autoplay controls muted loop playsinline>
-                        <source src="./videos/13.mp4" type="video/mp4">
+                    <video poster="" id="8e4eca6b021442d184e2dc491bddb030_0_166" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/8e4eca6b021442d184e2dc491bddb030_0_166.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="8" autoplay controls muted loop playsinline>
-                        <source src="./videos/8.mp4" type="video/mp4">
+                    <video poster="" id="46ebd68503684ded964daeae4fa4f65f_0_167" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/46ebd68503684ded964daeae4fa4f65f_0_167.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="12" autoplay controls muted loop playsinline>
-                        <source src="./videos/12.mp4" type="video/mp4">
+                    <video poster="" id="470d75cf24c049b68d171dfd2bc2198f_0_238" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/470d75cf24c049b68d171dfd2bc2198f_0_238.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="15" autoplay controls muted loop playsinline>
-                        <source src="./videos/15.mp4" type="video/mp4">
+                    <video poster="" id="2210d83996374886a4b3d1c115b5944d_0_129" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/2210d83996374886a4b3d1c115b5944d_0_129.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="5" autoplay controls muted loop playsinline>
-                        <source src="./videos/5.mp4" type="video/mp4">
+                    <video poster="" id="9038ffc716f849ac9fc229de491f0bea_0_222" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/9038ffc716f849ac9fc229de491f0bea_0_222.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="10" autoplay controls muted loop playsinline>
-                        <source src="./videos/10.mp4" type="video/mp4">
+                    <video poster="" id="72556fb70fcf4e988a1fca1cb3999263_0_77" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/72556fb70fcf4e988a1fca1cb3999263_0_77.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="item">
-                    <video poster="" id="9" autoplay controls muted loop playsinline>
-                        <source src="./videos/9.mp4" type="video/mp4">
+                    <video poster="" id="8641197c37704a9b9e3ca50275cc1c73_0_501" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/8641197c37704a9b9e3ca50275cc1c73_0_501.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="item">
-                    <video poster="" id="11" autoplay controls muted loop playsinline>
-                        <source src="./videos/11.mp4" type="video/mp4">
+                <!-- <div class="item">
+                    <video poster="" id="b55c50ace6ac4e73bebf15a1314be3fd_0_661" autoplay controls muted loop playsinline>
+                        <source src="assets/videos/b55c50ace6ac4e73bebf15a1314be3fd_0_661.mp4" type="video/mp4">
                     </video>
-                </div>
+                </div> -->
                 <div class="item">
-                    <video poster="" id="3" autoplay controls muted loop playsinline>
-                        <source src="./videos/3.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="14" autoplay controls muted loop playsinline>
-                        <source src="./videos/14.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="1" autoplay controls muted loop playsinline>
-                        <source src="./videos/1.mp4" type="video/mp4">
+                    <video poster="" id="e5a8c82029834b99aecf98259ef503ea_0_384" autoplay controls muted loop playsinline>
+                        <source src="./assets/videos/e5a8c82029834b99aecf98259ef503ea_0_384.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -310,13 +310,55 @@
 <section class="hero video-section">
     <div class="container is-max-desktop">
         <div class="hero-body">
+            <h2 class="title is-4">Diversity</h2>
+            <div class="video-wrapper2">
+                <!-- 视频列表 -->
+                <div class="item">
+                    <video poster="" id="2b377b41fa82407ab1dbe63e0dd83cc2_0_12" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_0_12.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="2b377b41fa82407ab1dbe63e0dd83cc2_1_12" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_1_12.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="02d84a6901584cf9ab42cd07c1514731_1_5" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/02d84a6901584cf9ab42cd07c1514731_1_5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="02d84a6901584cf9ab42cd07c1514731_3_6" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/02d84a6901584cf9ab42cd07c1514731_3_6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="6e6e2ac8986e4fc1bb7c046208e2dacd_0_21" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_0_21.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="item">
+                    <video poster="" id="6e6e2ac8986e4fc1bb7c046208e2dacd_2_19" autoplay controls muted loop playsinline>
+                        <source src="./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_2_19.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="hero video-section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
             <h2 class="title is-4">Text-Condition Texture Generation</h2>
             <video controls autoplay controls muted loop playsinline>
                 <source src="./videos/output.mp4" type="video/mp4">
             </video>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -329,8 +371,13 @@
                     Our Point-UV diffusion starts with a 3D point diffusion model to colorize a set of sampled points on the mesh surface. This stage leverages the 3D topology for predicting low-frequency colors on the mesh, without being affected by the discontinuity of the UV map.  
                     Based on the color components generated by the coarse stage, we further build a 2D diffusion model on the UV space to enhance the fidelity of the generated texture.
                 </div> -->
-                <img src="./figs/overview.jpg"/>
-                <img src="./figs/blocks.jpg"/>
+                <img src="./assets/figs/pipeline.png"/>
+                <div class="content has-text-justified" style="padding-top: 15px">
+                    <b>(a)</b> Given a 3D mesh and conditioning via image or text prompts, our method generates a complete UV texture map. Unlike prior works that only predict a single UV map, our approach jointly synthesizes both multi-view images and UV textures, enabling effective transfer of world knowledge from pretrained video models. 
+                    <b>(b)</b> The SeqTex pipeline: geometric, image, and textual conditions are encoded and injected as tokens, with both multi-view and UV tokens denoised through a unified video diffusion architecture. 
+                    <b>(c)</b> MV branch (LoRA finetuned): multi-view tokens are refined using geometry and text; the Geo Attention is computed solely on MV tokens and produces view-consistent output MV tokens.
+                    <b>(d)</b> UV branch (fully fine-tuned): with geometry guidance, UV tokens (Query) attend to both relevant MV and UV tokens (Key/Value) via the Geo Attention.
+                </div>
             </div>
         </div>
     </div>
@@ -340,31 +387,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{10.1145/3687909,
-        author = {Yu, Xin and Yuan, Ze and Guo, Yuan-Chen and Liu, Ying-Tian and Liu, Jianhui and Li, Yangguang and Cao, Yan-Pei and Liang, Ding and Qi, Xiaojuan},
-        title = {TEXGen: a Generative Diffusion Model for Mesh Textures},
-        journal = {ACM Trans. Graph.},
-        volume = {43},
-        number = {6},
-        year = {2024},
-        issn = {0730-0301},
-        doi = {10.1145/3687909},
-        articleno = {213},
-        numpages = {14},
-        keywords = {generative model, texture generation}
-      }</code></pre>
+    <pre><code>
+        placeholder
+    </code></pre>
   </div>
 </section>
 
 <footer class="footer">
     <div class="container">
         <div class="content has-text-centered">
-            <!-- <a class="icon-link" href="#">
-                <i class="fas fa-file-pdf"></i>
-            </a>
-            <a class="icon-link" href="https://github.com/XinYu-Andy" class="external-link" disabled>
-                <i class="fab fa-github"></i>
-            </a> -->
         </div>
         <div class="columns is-centered">
             <div class="column is-8">
@@ -374,7 +405,7 @@
                             href="https://nerfies.github.io/">Nerfies website</a>.
                     </p>
                     <p style="text-align:center">
-                        Please contact <a href="https://github.com/XinYu-Andy" style="color:rgb(46, 151, 92);">Xin Yu</a> (email at <a href="mailto:yuxin27g@gmail.com" style="color:rgb(46, 151, 92);">yuxin27g@gmail.com</a>) for feedback and questions.
+                        Please contact <a href="https://github.com/yuanze1024" style="color:rgb(46, 151, 92);">Ze Yuan</a> (email at <a href="mailto:yuanze1024@gmail.com" style="color:rgb(46, 151, 92);">yuanze1024@gmail.com</a>) for feedback and questions.
                     </p>                    
                     <!-- hitwebcounter Code START -->
 <!-- <a href="https://www.hitwebcounter.com" target="_blank">
