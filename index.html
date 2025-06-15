@@ -71,7 +71,7 @@
         gap: 15px; /* 控制视频间距 */
     }
     .video-wrapper2 .item {
-        flex: 0 0 calc(50% - 15px); /* 每个视频占一行的 20%，扣除间距 */
+        flex: 0 0 calc(16.6% - 15px); /* 每个视频占一行的 20%，扣除间距 */
     }
     .video-wrapper2 video {
         width: 100%;
@@ -89,6 +89,55 @@
         color:rgb(64, 64, 64);
         font-size: 16px;
         font-family: 'Noto Sans', sans-serif;
+    }
+
+    /* Model viewer styles */
+    .results-carousel textbox {
+        font-size: 7px;
+        font-family: "Google Sans", cursive, sans-serif;
+        color: hsl(321, 56%, 56%) !important;
+    }
+    .dialog-box {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(96, 85, 85, 0.494);
+        padding: 10px;
+        border-radius: 15px;
+        z-index: 1000;
+        font-size: 14px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        color: hsl(322, 33%, 22%) !important;
+        font-weight: bold;
+    }
+
+    .controls {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+
+    .controls label {
+        margin-right: 10px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        font-size: 12px;
+        border: 1px solid #ccc;
+    }
+
+    .controls label:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    .results-carousel {
+        overflow: hidden;
+    }
+
+    .results-carousel .item {
+        margin: 10px;
+        position: relative;
     }
   </style>
 
@@ -191,9 +240,6 @@
     <div class="container is-max-desktop">
         <div class="hero-body">
             <img src="./assets/figs/teaser.png" alt="SeqTex teaser image" width="100%">
-            <!-- <h2 class=" subtitle has-text-centered" style="padding-top: 10px">
-                A gallery of generated results by our Point-UV Diffusion. Our method is capable of processing meshes of any genus, generating diversified, geometry-compatible, and high-fidelity textures. 
-            </h2> -->
         </div>
     </div>
 </section>
@@ -218,160 +264,34 @@
     </div>
 </section>
 
-
-<!-- TODO -->
-<!-- <section class="hero video-section">
-    <div class="container is-max-desktop">
-        <div class="hero-body">
-            <h2 class="title is-4">Fast Forward</h2>
-            <video controls width="100%">
-                <source src="./videos/fastforward.mov" type="video/mp4">
-            </video>
-        </div>
-    </div>
-</section> -->
-
 <section class="hero video-section">
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="title is-4">Text-Condition Generation Result Details</h2>
-            <div class="video-wrapper">
-                <!-- 视频列表 -->
-                <div class="item">
-                    <video poster="" id="4ccebf9f5036420f8b1f67779da45ae1_0_32" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/4ccebf9f5036420f8b1f67779da45ae1_0_32.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="5a6e457d83fa4392a07e0755e2f8d278_0_30" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/5a6e457d83fa4392a07e0755e2f8d278_0_30.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="5f3dfd44c6cd4bef8acca92791efa006_0_244" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/5f3dfd44c6cd4bef8acca92791efa006_0_244.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="06b1b263b67c463d9a2e42add4516ebb_0_97" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/06b1b263b67c463d9a2e42add4516ebb_0_97.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="8e4eca6b021442d184e2dc491bddb030_0_166" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/8e4eca6b021442d184e2dc491bddb030_0_166.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="46ebd68503684ded964daeae4fa4f65f_0_167" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/46ebd68503684ded964daeae4fa4f65f_0_167.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="470d75cf24c049b68d171dfd2bc2198f_0_238" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/470d75cf24c049b68d171dfd2bc2198f_0_238.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="2210d83996374886a4b3d1c115b5944d_0_129" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/2210d83996374886a4b3d1c115b5944d_0_129.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="9038ffc716f849ac9fc229de491f0bea_0_222" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/9038ffc716f849ac9fc229de491f0bea_0_222.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="72556fb70fcf4e988a1fca1cb3999263_0_77" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/72556fb70fcf4e988a1fca1cb3999263_0_77.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="8641197c37704a9b9e3ca50275cc1c73_0_501" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/8641197c37704a9b9e3ca50275cc1c73_0_501.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- <div class="item">
-                    <video poster="" id="b55c50ace6ac4e73bebf15a1314be3fd_0_661" autoplay controls muted loop playsinline>
-                        <source src="assets/videos/b55c50ace6ac4e73bebf15a1314be3fd_0_661.mp4" type="video/mp4">
-                    </video>
-                </div> -->
-                <div class="item">
-                    <video poster="" id="e5a8c82029834b99aecf98259ef503ea_0_384" autoplay controls muted loop playsinline>
-                        <source src="./assets/videos/e5a8c82029834b99aecf98259ef503ea_0_384.mp4" type="video/mp4">
-                    </video>
-                </div>
+            <div class="video-wrapper" id="text-videos-container">
+                <!-- Videos will be dynamically injected here -->
             </div>
         </div>
     </div>
 </section>
-
 
 <section class="hero video-section">
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="title is-4">Diversity</h2>
-            <div class="video-wrapper2">
-                <!-- 视频列表 -->
-                <div class="item">
-                    <video poster="" id="2b377b41fa82407ab1dbe63e0dd83cc2_0_12" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_0_12.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="2b377b41fa82407ab1dbe63e0dd83cc2_1_12" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_1_12.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="02d84a6901584cf9ab42cd07c1514731_1_5" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/02d84a6901584cf9ab42cd07c1514731_1_5.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="02d84a6901584cf9ab42cd07c1514731_3_6" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/02d84a6901584cf9ab42cd07c1514731_3_6.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="6e6e2ac8986e4fc1bb7c046208e2dacd_0_21" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_0_21.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item">
-                    <video poster="" id="6e6e2ac8986e4fc1bb7c046208e2dacd_2_19" autoplay controls muted loop playsinline>
-                        <source src="./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_2_19.mp4" type="video/mp4">
-                    </video>
-                </div>
+            <div class="video-wrapper2" id="diversity-videos-container">
+                <!-- Videos will be dynamically injected here -->
             </div>
         </div>
     </div>
 </section>
 
-
-<!-- <section class="hero video-section">
-    <div class="container is-max-desktop">
-        <div class="hero-body">
-            <h2 class="title is-4">Text-Condition Texture Generation</h2>
-            <video controls autoplay controls muted loop playsinline>
-                <source src="./videos/output.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-</section> -->
-
-
-<section class="section">
+<section class="section hero is-light">
     <div class="container is-max-desktop">
        <!-- Overview. -->
         <div class="columns is-centered" style="margin-top: 0px">
             <div class="column is-full-width">
                 <h2 class="title is-4">Method Overview</h2>
-                <!-- <div class="content has-text-justified" style="padding-top: 15px">
-                    Our Point-UV diffusion starts with a 3D point diffusion model to colorize a set of sampled points on the mesh surface. This stage leverages the 3D topology for predicting low-frequency colors on the mesh, without being affected by the discontinuity of the UV map.  
-                    Based on the color components generated by the coarse stage, we further build a 2D diffusion model on the UV space to enhance the fidelity of the generated texture.
-                </div> -->
                 <img src="./assets/figs/pipeline.png"/>
                 <div class="content has-text-justified" style="padding-top: 15px">
                     <b>(a)</b> Given a 3D mesh and conditioning via image or text prompts, our method generates a complete UV texture map. Unlike prior works that only predict a single UV map, our approach jointly synthesizes both multi-view images and UV textures, enabling effective transfer of world knowledge from pretrained video models. 
@@ -384,8 +304,479 @@
     </div>
 </section>
 
-<!-- todo: add model viewer -->
+<!---------------------------------------------Functions Start-------------------------------------------------->
+<script>
+  function createRadioButtons_image(name) {
+    const createRadioButton = (value, label, checked = false) => {
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = name;
+      input.value = value;
+      input.checked = checked;
+      input.style.opacity = "0";
+      input.id = value + name;
+      input.style.position = "absolute";
 
+      const labelElement = document.createElement("label");
+      labelElement.htmlFor = input.id;
+
+      const span = document.createElement("span");
+      span.innerHTML = label;
+
+      labelElement.appendChild(input);
+      labelElement.appendChild(span);
+
+      const div = document.createElement("div");
+      div.appendChild(labelElement);
+
+      return div;
+    };
+
+    return [
+      createRadioButton("texture", "texture", true), // Default to texture
+      createRadioButton("mesh", "mesh"),
+      createRadioButton("image", "show image"),
+    ];
+  }
+
+  function createImageElement(src) {
+    const imageElement = document.createElement("img");
+    imageElement.src = src;
+    imageElement.style.display = "none";
+    imageElement.style.width = "100%";
+    imageElement.style.height = "100%";
+    return imageElement;
+  }
+
+  function createModelView_image(modelPath, index) {
+    const modelDiv = document.createElement("div");
+    modelDiv.className = "item render_wrapper";
+
+    // Create and append Model Viewer
+    const modelViewerDiv = document.createElement("div");
+    modelViewerDiv.className = "render_wrapper";
+    const modelViewer = document.createElement("model-viewer");
+    // ... set modelViewer properties ...
+    modelViewer.src = "./assets/models/" + modelPath + ".glb";
+    modelViewer.alt = "Description of model";
+    modelViewer.setAttribute("auto-rotate", "");
+    modelViewer.setAttribute("camera-controls", "");
+    modelViewer.style.width = "100%";
+    modelViewer.style.height = "100%";
+    modelViewer.style.backgroundColor = "transparent";
+    modelViewer.setAttribute("camera-orbit", "50deg 75deg 3m");
+
+    const imageElement = createImageElement(
+      "./assets/model_image/" + modelPath + ".png"
+    );
+    const radioButtons = createRadioButtons_image(
+      "display-option-" + index
+    );
+    const updateColors = () => {
+      radioButtons.forEach((rb) => {
+        rb.querySelector("span").style.color = rb.querySelector("input")
+          .checked
+          ? "green"
+          : "blue";
+        rb.querySelector("span").style.opacity = rb.querySelector("input")
+          .checked
+          ? 1
+          : 0.2;
+      });
+    };
+
+    radioButtons.forEach((radioButton) => {
+      radioButton
+        .querySelector("input")
+        .addEventListener("change", updateColors);
+    });
+    updateColors();
+
+    let originalTexture = null;
+    modelViewer.addEventListener("load", function () {
+      const material = modelViewer.model.materials[0];
+      originalTexture =
+        material.pbrMetallicRoughness.baseColorTexture.texture;
+    });
+
+    radioButtons[0]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        const material = modelViewer.model.materials[0];
+        const texture =
+          material.pbrMetallicRoughness.baseColorTexture.texture;
+        if (this.checked) {
+          const material = modelViewer.model.materials[0];
+          material.pbrMetallicRoughness.baseColorTexture.setTexture(
+            originalTexture
+          );
+          modelViewer.style.display = "block";
+          imageElement.style.display = "none";
+        }
+      });
+    radioButtons[1]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        const material = modelViewer.model.materials[0];
+        const texture =
+          material.pbrMetallicRoughness.baseColorTexture.texture;
+        if (this.checked) {
+          const material = modelViewer.model.materials[0];
+          material.pbrMetallicRoughness.baseColorTexture.setTexture(null);
+          modelViewer.style.display = "block";
+          imageElement.style.display = "none";
+        }
+      });
+    radioButtons[2]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        if (this.checked) {
+          modelViewer.style.display = "none";
+          imageElement.style.display = "block";
+        }
+      });
+
+    const controlsDiv = document.createElement("div");
+    controlsDiv.className = "controls";
+    radioButtons.forEach((radioButton) =>
+      controlsDiv.appendChild(radioButton)
+    );
+    modelDiv.appendChild(controlsDiv);
+
+    modelDiv.appendChild(imageElement);
+    modelDiv.appendChild(modelViewer); // Append model viewer first
+    modelDiv.appendChild(modelViewerDiv);
+
+    return modelDiv;
+  }
+
+  function createRadioButtons_text(name) {
+    const createRadioButton = (value, label, checked = false) => {
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = name;
+      input.value = value;
+      input.checked = checked;
+      input.style.opacity = "0";
+      input.id = value + name;
+      input.style.position = "absolute";
+
+      const labelElement = document.createElement("label");
+      labelElement.htmlFor = input.id;
+
+      const span = document.createElement("span");
+      span.innerHTML = label;
+
+      labelElement.appendChild(input);
+      labelElement.appendChild(span);
+
+      const div = document.createElement("div");
+      div.appendChild(labelElement);
+
+      return div;
+    };
+
+    return [
+      createRadioButton("texture", "texture", true), // Default to texture
+      createRadioButton("mesh", "mesh"),
+      createRadioButton("prompt", "show prompt"),
+    ];
+  }
+
+  function createModelView_text(modelPath, index) {
+    const modelDiv = document.createElement("div");
+    modelDiv.className = "item render_wrapper";
+
+    // Create and append Model Viewer
+    const modelViewerDiv = document.createElement("div");
+    modelViewerDiv.className = "render_wrapper";
+    const modelViewer = document.createElement("model-viewer");
+    // ... set modelViewer properties ...
+    modelViewer.src = "./assets/models_text/" + modelPath + ".glb";
+    modelViewer.alt = "Description of model";
+    modelViewer.setAttribute("auto-rotate", "");
+    modelViewer.setAttribute("camera-controls", "");
+    modelViewer.style.width = "100%";
+    modelViewer.style.height = "100%";
+    modelViewer.style.backgroundColor = "transparent";
+    modelViewer.setAttribute("camera-orbit", "50deg 75deg 3m");
+
+    const radioButtons = createRadioButtons_text(
+      "display-option-" + index
+    );
+    const updateColors = () => {
+      radioButtons.forEach((rb) => {
+        rb.querySelector("span").style.color = rb.querySelector("input")
+          .checked
+          ? "green"
+          : "blue";
+        rb.querySelector("span").style.opacity = rb.querySelector("input")
+          .checked
+          ? 1
+          : 0.2;
+      });
+    };
+
+    radioButtons.forEach((radioButton) => {
+      radioButton
+        .querySelector("input")
+        .addEventListener("change", updateColors);
+    });
+    updateColors();
+
+    let originalTexture = null;
+    modelViewer.addEventListener("load", function () {
+      const material = modelViewer.model.materials[0];
+      originalTexture =
+        material.pbrMetallicRoughness.baseColorTexture.texture;
+    });
+
+    radioButtons[0]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        const material = modelViewer.model.materials[0];
+        const texture =
+          material.pbrMetallicRoughness.baseColorTexture.texture;
+        if (this.checked) {
+          const material = modelViewer.model.materials[0];
+          material.pbrMetallicRoughness.baseColorTexture.setTexture(
+            originalTexture
+          );
+          modelViewer.style.display = "block";
+          dialogBox.style.display = "none";
+        }
+      });
+    radioButtons[1]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        const material = modelViewer.model.materials[0];
+        const texture =
+          material.pbrMetallicRoughness.baseColorTexture.texture;
+        if (this.checked) {
+          const material = modelViewer.model.materials[0];
+          material.pbrMetallicRoughness.baseColorTexture.setTexture(null);
+          modelViewer.style.display = "block";
+          dialogBox.style.display = "none";
+        }
+      });
+
+    const controlsDiv = document.createElement("div");
+    controlsDiv.className = "controls";
+    radioButtons.forEach((radioButton) =>
+      controlsDiv.appendChild(radioButton)
+    );
+
+    const dialogBox = document.createElement("div");
+    dialogBox.className = "dialog-box";
+    dialogBox.style.position = "absolute";
+    dialogBox.style.display = "none";
+    dialogBox.style.top = "30px";
+    dialogBox.style.right = "0";
+    dialogBox.style.width = "80%";
+    dialogBox.style.height = "80%";
+
+    radioButtons[2]
+      .querySelector("input")
+      .addEventListener("change", function () {
+        if (this.checked) {
+          modelViewer.style.display = "none";
+          // Load prompt text from file
+          fetch("./assets/model_prompt/" + modelPath + ".txt")
+            .then((response) => response.text())
+            .then((text) => {
+              dialogBox.innerHTML = text;
+              dialogBox.style.display = "block";
+            })
+            .catch((error) => {
+              console.error(error);
+              dialogBox.innerHTML = "Prompt not available for this model.";
+              dialogBox.style.display = "block";
+            });
+        }
+      });
+
+    modelDiv.appendChild(controlsDiv);
+    modelDiv.appendChild(dialogBox);
+    modelDiv.appendChild(modelViewer);
+    modelDiv.appendChild(modelViewerDiv);
+
+    return modelDiv;
+  }
+
+  function createCarousel(
+    modelPaths,
+    resultsCarouselId,
+    createModelViewFunction
+  ) {
+    const resultsCarousel = document.getElementById(resultsCarouselId);
+
+    modelPaths.forEach((modelPath, index) => {
+      const uniqueId = resultsCarouselId + "-model-" + index;
+      const modelDiv = createModelViewFunction(modelPath, uniqueId);
+      resultsCarousel.appendChild(modelDiv);
+    });
+  }
+
+  // Dynamic video injection function
+  function createVideoGallery(videoPaths, containerId, itemClass = "item") {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = ""; // Clear existing content
+    
+    videoPaths.forEach((videoPath, index) => {
+      const videoId = videoPath.split('/').pop().split('.')[0]; // Extract filename without extension
+      
+      const itemDiv = document.createElement("div");
+      itemDiv.className = itemClass;
+      
+      const video = document.createElement("video");
+      video.poster = "";
+      video.id = videoId;
+      video.autoplay = true;
+      video.controls = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      
+      const source = document.createElement("source");
+      source.src = videoPath;
+      source.type = "video/mp4";
+      
+      video.appendChild(source);
+      itemDiv.appendChild(video);
+      container.appendChild(itemDiv);
+    });
+  }
+
+  // Initialize carousel functionality
+  function initializeCarousels() {
+    // Carousel options for model galleries
+    const carouselOptions = {
+      slidesToScroll: 1,
+      slidesToShow: 3,
+      loop: true,
+      infinite: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      navigation: true,
+      pagination: true,
+      duration: 300,
+      timing: 'ease'
+    };
+
+    // Initialize carousels
+    setTimeout(() => {
+      const carousels = bulmaCarousel.attach('.results-carousel', carouselOptions);
+      
+      // Add event listeners if needed
+      carousels.forEach((carousel, index) => {
+        carousel.on('before:show', state => {
+          console.log(`Carousel ${index} state:`, state);
+        });
+        
+        // Additional debugging
+        carousel.on('after:show', state => {
+          console.log(`Carousel ${index} after show:`, state);
+        });
+      });
+    }, 200); // Increased delay to ensure DOM is fully ready
+  }
+</script>
+<!---------------------------------------------Functions Over-------------------------------------------------->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Text-condition Texture Generation Result</h2>
+      <div id="results-carousel-text" class="carousel results-carousel"></div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Image-condition Texture Generation Result</h2>
+      <div id="results-carousel-image" class="carousel results-carousel"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Initialize model viewers and video galleries when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    // Define model paths for text-condition generation
+    const textModelPaths = [
+      "02bf18095e9b486b861e9033e5603f9f_1_12",
+      "040be22412f04cfb9ed9d53771da8c4c_2_578",
+      "21b70be97cd942c0a5f9899d3dff551d_1_34",
+      "2dc52b90dddd47e681b22a3d9bcfd305_1_16",
+      "585acb5018534a0d8f2b414666356e85_1_183",
+      "66b9806658784317834f8d702f720b91_0_610",
+      "8e1ecdb8c34e45389642d0af43f5c67d_0_342",
+      "a53633951e9e4dd0ab14bdc06e08984f_0_488",
+      "c11d58f9e69044ba968cc1771702cf7f_0_36",
+      "cadefc29b58d4c16b200f1d775ae9494_2_64",
+      "ce2775ac8cc44113b86288c17dab9a27_1_153",
+      "db3c5188ae8242e59bf03578fd11e2fd_1_292",
+      "ebcea11799284c4687f69a38088487de_2_39"
+    ];
+
+    // Define model paths for image-condition generation
+    const imageModelPaths = [
+      "0bdace79eecc4bd29fe1b6def8bb65d9_0_294",
+      "13f5a79025134018a59d1c3b945861e5_3_44",
+      "1f1df6b110d04959b99de4867538b996_1_72",
+      "4a145be43ba04238b83e6394f6a4426c_1_241",
+      "686f8ad0f8a845d28bb7aefa6b751ae4_2_52",
+      "765a6a546d7545f8b9a83cc7a17a9199_0_683",
+      "885e22b39fbb41968ae2ee735fd788ed_1_734",
+      "8e1ecdb8c34e45389642d0af43f5c67d_0_342",
+      "9246cf19095647e4a33a1e389e3c4e4a_2_415",
+      "99269e3b48c54e3c91a5bcce8b7ebf7f_2_162",
+      "e1e93d1b2b0e44bbb5cc69d760462221_2_167",
+      "e8a09eb24da645c0b5a36f6004fbd67c_3_298"
+    ];
+
+    // Define video paths for text-condition generation
+    const textVideosPaths = [
+      "./assets/videos/4ccebf9f5036420f8b1f67779da45ae1_0_32.mp4",
+      "./assets/videos/5a6e457d83fa4392a07e0755e2f8d278_0_30.mp4",
+      "./assets/videos/5f3dfd44c6cd4bef8acca92791efa006_0_244.mp4",
+      "./assets/videos/06b1b263b67c463d9a2e42add4516ebb_0_97.mp4",
+      "./assets/videos/8e4eca6b021442d184e2dc491bddb030_0_166.mp4",
+      "./assets/videos/46ebd68503684ded964daeae4fa4f65f_0_167.mp4",
+      "./assets/videos/470d75cf24c049b68d171dfd2bc2198f_0_238.mp4",
+      "./assets/videos/2210d83996374886a4b3d1c115b5944d_0_129.mp4",
+      "./assets/videos/9038ffc716f849ac9fc229de491f0bea_0_222.mp4",
+      "./assets/videos/72556fb70fcf4e988a1fca1cb3999263_0_77.mp4",
+      "./assets/videos/8641197c37704a9b9e3ca50275cc1c73_0_501.mp4",
+      "./assets/videos/e5a8c82029834b99aecf98259ef503ea_0_384.mp4"
+    ];
+
+    // Define video paths for diversity section
+    const diversityVideosPaths = [
+      "./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_0_12.mp4",
+      "./assets/diversity/2b377b41fa82407ab1dbe63e0dd83cc2_1_12.mp4",
+      "./assets/diversity/02d84a6901584cf9ab42cd07c1514731_1_5.mp4",
+      "./assets/diversity/02d84a6901584cf9ab42cd07c1514731_3_6.mp4",
+      "./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_0_21.mp4",
+      "./assets/diversity/6e6e2ac8986e4fc1bb7c046208e2dacd_2_19.mp4"
+    ];
+
+    // Create model carousels
+    createCarousel(textModelPaths, "results-carousel-text", createModelView_text);
+    createCarousel(imageModelPaths, "results-carousel-image", createModelView_image);
+
+    // Initialize carousel functionality after content is loaded
+    initializeCarousels();
+
+    // Initialize video galleries dynamically
+    createVideoGallery(textVideosPaths, "text-videos-container", "item");
+    createVideoGallery(diversityVideosPaths, "diversity-videos-container", "item");
+  });
+</script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -410,9 +801,6 @@
                     <p style="text-align:center">
                         Please contact <a href="https://github.com/yuanze1024" style="color:rgb(46, 151, 92);">Ze Yuan</a> (email at <a href="mailto:yuanze1024@gmail.com" style="color:rgb(46, 151, 92);">yuanze1024@gmail.com</a>) for feedback and questions.
                     </p>                    
-                    <!-- hitwebcounter Code START -->
-<!-- <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=8782868&style=0007&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>       -->
                 </div>
             </div>
         </div>
